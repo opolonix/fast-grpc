@@ -16,14 +16,14 @@ class grpc_method:  # pylint: disable=invalid-name
     def __init__(
             self,
             name: str | None = None,
-            request_model: Type[BaseModel] | None = None,
-            response_model: Type[BaseModel] | None = None,
+            __in: Type[BaseModel] | None = None,
+            __out: Type[BaseModel] | None = None,
             middlewares: list[FastGRPCMiddleware | Callable] | None = None,
             disable: bool = False,
     ):
         self._name = name
-        self._request_model = request_model
-        self._response_model = response_model
+        self._request_model = __in
+        self._response_model = __out
         self._middlewares = middlewares
         self._disable = disable
 
