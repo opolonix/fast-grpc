@@ -6,6 +6,7 @@ from grpc_reflection.v1alpha import reflection as grpc_reflection
 from .service import FastGRPCService
 
 
+
 class FastGRPC:
     def __init__(self, *services: FastGRPCService, port: int = 50051, reflection: bool = False):
         self._server = server()
